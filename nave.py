@@ -9,6 +9,11 @@ class Nave:
         self.hundido = False
 
     def recibir_disparo(self):
+        '''
+        :return: estado(Hundido, Tocado)
+        Metodo que sirve para restar la vida de una nave que haya recibido un disparo, o,
+        si no tiene vida suficiente, hacer que se hunda.
+        '''
         if self.hundido:
             return self.HUNDIDO
 

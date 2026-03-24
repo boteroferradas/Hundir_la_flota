@@ -72,5 +72,11 @@ class Tablero:
 
     # ===== DISPARO =====
     def comprobar_impacto(self, x, y):
+        '''
+        :param x: Coordenada x del tablero
+        :param y: Coordenada y del tablero
+        :return: self.casillero[x][y].disparar()
+        Este metodo nos imprime un mensaje de las coordenadas que fueron impactadas, mas el estado de la nave
+        '''
         print(f"Impacto en ({x},{y})")
         return self.casillero[x][y].disparar()
