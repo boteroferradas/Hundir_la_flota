@@ -1,16 +1,24 @@
 class Nave:
-    # El "constructor": define los datos necesarios al instanciar
-    def __init__(self, nombre, tamano):
-        self.nombre = nombre       # Atributo: Nombre de la nave
-        self.vida = tamano         # Atributo: Resistencia de la nave
-        self.hundido = False       # Atributo: Estado lógico inicial
-        self.TOCADO = 1
-        self.HUNDIDO = 2
+    TOCADO = 1
+    HUNDIDO = 2
 
-    # Un "método": Comportamiento definido para el objeto
+    def __init__(self, nombre, tipo, vida):
+        self.nombre = nombre
+        self.tipo = tipo
+        self.vida = vida
+        self.hundido = False
+
     def recibir_disparo(self):
+        if self.hundido:
+            return self.HUNDIDO
+
         self.vida -= 1
+
         if self.vida <= 0:
-            return self.hundido == True
+            self.vida = 0
+            self.hundido = True
+            print(f"{self.nombre} hundido")
+            return self.HUNDIDO
         else:
+            print(f"{self.nombre} tocado. Vida restante: {self.vida}")
             return self.TOCADO
