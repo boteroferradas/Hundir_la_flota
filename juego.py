@@ -5,6 +5,11 @@ class Juego:
         self.tablero = Tablero()
 
     def mostrar_resultado(self, resultado):
+        '''
+            :param resultado
+            :return print(Agua,Tocado,Hundido)
+        Este metodo muestra el estado de la casilla/nave que se especifica en las coordenada de lanzar_ataque()
+        '''
         if resultado == 0:
             print("Agua")
         elif resultado == 1:
@@ -15,6 +20,13 @@ class Juego:
             print("Ya disparaste aquí")
 
     def lanzar_ataque(self, x, y):
+        '''
+        :param x: Coordenada x, int
+        :param y: Coordenada y, int
+        :return: mostrar_resultado
+        Metodo que sirve para inicializar el juego como tal, se pide una coordenada
+        "x" y una coordenada "y" del tablero que quieras "atacar"
+        '''
         print(f"\nAtaque en ({x},{y})")
 
         resultado = self.tablero.comprobar_impacto(x, y)

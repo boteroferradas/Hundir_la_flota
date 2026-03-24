@@ -4,6 +4,11 @@ class Casilla:
         self.visitada = False
 
     def disparar(self):
+        '''
+        :return: boolean, recibir_disparo()
+        Metodo que sirve para comprobar si la casilla ya recibio un ataque previamente, si no hay
+        una nave que nos devuelva "Agua" y nos devuelva el estado de la nave.
+        '''
         if self.visitada:
             print("Ya disparaste aquí")
             return None
